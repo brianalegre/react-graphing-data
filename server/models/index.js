@@ -1,4 +1,5 @@
 // Import Models
+const CDMResult = require('./cdmResult')
 
 // Export
-module.exports = { modelName };
+module.exports = { CDMResult };

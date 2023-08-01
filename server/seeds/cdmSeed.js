@@ -18,7 +18,7 @@ const cdmResultData = [
 ]
 
 // Start Seed
-const seedCDM = () => Systems.bulkCreate(cdmResultData)
+const seedCDM = () => CDMResult.bulkCreate(cdmResultData)
 
 // Export
 module.exports = seedCDM

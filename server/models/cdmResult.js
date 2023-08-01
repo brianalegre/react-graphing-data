@@ -48,8 +48,14 @@ CDMResult.init(
             type: DataTypes.DECIMAL(10, 1),
             allowNull: false
         },
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'CDMResult',
     }
 )
 
 // Export
-module.exports = CDMResult;
+module.exports = CDMResult

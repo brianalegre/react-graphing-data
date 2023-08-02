@@ -67,14 +67,14 @@ router.delete('/:id', async (req, res) => {
 // Add New Result
 router.post('/', async (req, res) => {
     try {
-
+        // Add Result
         const addCDMResult = await CDMResult.create({
             Sequential_Read_1MiB_Q8_T1: req.body.Sequential_Read_1MiB_Q8_T1,
             Sequential_Read_1MiB_Q1_T1: req.body.Sequential_Read_1MiB_Q1_T1,
             Sequential_Write_1MiB_Q8_T1: req.body.Sequential_Write_1MiB_Q8_T1,
             Sequential_Write_1MiB_Q1_T1: req.body.Sequential_Write_1MiB_Q1_T1,
             Random_Read_4KiB_Q32_T1: req.body.Random_Read_4KiB_Q32_T1,
-            Random_Read_4KiB_Q1_T1: req.bodyRandom_Read_4KiB_Q1_T1,
+            Random_Read_4KiB_Q1_T1: req.body.Random_Read_4KiB_Q1_T1,
             Random_Write_4KiB_Q32_T1: req.body.Random_Write_4KiB_Q32_T1,
             Random_Write_4KiB_Q1_T1: req.body.Random_Write_4KiB_Q1_T1,
         })

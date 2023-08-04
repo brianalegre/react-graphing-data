@@ -6,25 +6,32 @@ import ChartComponent from './components/ChartComponent';
 // Main
 function App() {
 
-  // useState to store data from API
-  const [cdmData, setCdmData] = useState([]);
+  // // useState to store data from API
+  // const [cdmData, setCdmData] = useState([]);
 
-  // fetch data
-  useEffect(() => {
-    fetch('http://localhost:3001/api/cdmapi/1')
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('cdmapi', data)
-        setCdmData(data)
-      })
-      .catch((err) => {
-        console.log(err.message)
-      })
-  }, []);
+  // // fetch data
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/api/cdmapi')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log('cdmapi', data)
+  //       // Stringify data
+  //       const stringifyData = JSON.stringify(data)
+  //       // Parse data
+  //       const parseData = JSON.parse(stringifyData)
+
+  //       // Set data
+
+  //       setCdmData(parseData)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message)
+  //     })
+  // }, []);
 
   return (
     <div>
-      <ChartComponent cdmData={cdmData} />
+      <ChartComponent/>
     </div>
   )
 }

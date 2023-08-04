@@ -40,14 +40,42 @@ export default function ChartComponent() {
     //     </tbody >
     // ))
 
+    // Extract data for the chart
+    const sequentialReadData_1MiB_Q8_T1 = cdmData.map((item) => item.Sequential_Read_1MiB_Q8_T1);
+    const sequentialReadData_1MiB_Q1_T1 = cdmData.map((item) => item.Sequential_Write_1MiB_Q1_T1);
+    const sequentialWrite_1MiB_Q8_T1 = cdmData.map((item) => item.Sequential_Write_1MiB_Q8_T1);
+    const sequentialWrite_1MiB_Q1_T1 = cdmData.map((item) => item.Sequential_Write_1MiB_Q1_T1);
+
+    // Process the data for the chart
     const chartData = {
-        labels: cdmData.map((item) => item.Sequential_Read_1MiB_Q8_T1),
+        labels: cdmData.map((_, index) => `Test ${index + 1}`),
         datasets: [
             {
-                label: 'Sample Data',
-                data: cdmData.map((item) => item.Sequential_Read_1MiB_Q8_T1.value),
+                label: 'Sequential_Read_1MiB_Q8_T1',
+                data: sequentialReadData_1MiB_Q8_T1,
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+            },
+            {
+                label: 'Sequential_Read_1MiB_Q1_T1',
+                data: sequentialReadData_1MiB_Q1_T1,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2,
+            },
+            {
+                label: 'Sequential_Write_1MiB_Q8_T1',
+                data: sequentialWrite_1MiB_Q8_T1,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2,
+            },
+            {
+                label: 'Sequential_Write_1MiB_Q1_T1',
+                data: sequentialWrite_1MiB_Q1_T1,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 2,
             },
         ],
